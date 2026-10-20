@@ -1,0 +1,801 @@
+/* ======================================
+   1. WARNA DAN PENGATURAN DASAR
+   ====================================== */
+:root {
+    --latar: #f7f8f4;
+    --putih: #ffffff;
+    --hijau-gelap: #203e35;
+    --hijau: #356650;
+    --sage: #e9efe5;
+    --krem: #f3eddf;
+    --teks: #283c33;
+    --teks-sekunder: #606f65;
+    --garis: #dfe6dc;
+    --bayangan: 0 12px 35px rgb(32 62 53 / 5%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--latar);
+    color: var(--teks);
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1120px;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--hijau-gelap);
+    line-height: 1.3;
+}
+
+p {
+    margin-bottom: 18px;
+}
+
+a {
+    color: var(--hijau);
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+a:hover {
+    color: var(--hijau-gelap);
+}
+
+:focus-visible {
+    outline: 3px solid #a97924;
+    outline-offset: 4px;
+}
+
+/* ======================================
+   2. NAVIGASI
+   ====================================== */
+.navigasi {
+    padding: 18px 0;
+    background: var(--hijau-gelap);
+    border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+.navbar-brand {
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.titik-logo {
+    color: #d3dfb7;
+}
+
+.navigasi .navbar-nav {
+    align-items: center;
+}
+
+.navigasi .nav-link {
+    padding: 8px 14px;
+    border-radius: 8px;
+    color: #e5ede7;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.navigasi .nav-link:hover,
+.navigasi .nav-link:focus {
+    background: rgb(255 255 255 / 10%);
+    color: white;
+}
+
+.navbar-toggler {
+    padding: 8px 10px;
+    border-color: #8fa99b;
+}
+
+/* ======================================
+   3. HEADER PROFIL
+   ====================================== */
+.hero {
+    padding: 85px 0 90px;
+    background:
+        radial-gradient(ellipse at 95% 10%,
+            #dfe8d8 0%,
+            transparent 55%),
+        linear-gradient(130deg, #f4f1e8, #eef3eb);
+    border-bottom: 1px solid var(--garis);
+}
+
+.label-hero {
+    display: inline-block;
+    margin-bottom: 24px;
+    padding: 6px 13px;
+    border: 1px solid #c7d5bf;
+    border-radius: 30px;
+    background: rgb(255 255 255 / 55%);
+    color: var(--hijau);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero h1 {
+    max-width: 720px;
+    margin-bottom: 24px;
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 750;
+    letter-spacing: -2px;
+    overflow-wrap: anywhere;
+}
+
+.hero h1 span {
+    display: inline-block;
+    margin-top: 6px;
+    color: var(--hijau);
+}
+
+.deskripsi-hero {
+    max-width: 570px;
+    margin-bottom: 24px;
+    color: var(--teks-sekunder);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.identitas-hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.identitas-hero span {
+    padding: 6px 12px;
+    border: 1px solid #d4ded0;
+    border-radius: 7px;
+    background: rgb(255 255 255 / 65%);
+    color: #4b6051;
+    font-size: 11px;
+}
+
+/* Foto profil */
+.kartu-foto {
+    width: min(100%, 300px);
+    margin: 0 auto;
+    padding: 12px;
+    border: 1px solid #d5dfcf;
+    border-radius: 100px 100px 20px 20px;
+    background: var(--putih);
+    box-shadow: 14px 16px 0 #dce5d5;
+}
+
+.foto-profil {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 14 / 15;
+    border-radius: 90px 90px 12px 12px;
+    object-fit: cover;
+    object-position: center;
+    background: var(--sage);
+}
+
+.kartu-foto figcaption {
+    padding: 18px 6px 8px;
+    text-align: center;
+}
+
+.kartu-foto figcaption strong {
+    display: block;
+    color: var(--hijau-gelap);
+    font-size: 15px;
+}
+
+.kartu-foto figcaption span {
+    display: block;
+    margin-top: 3px;
+    color: var(--teks-sekunder);
+    font-size: 11px;
+}
+
+/* ======================================
+   4. BAGIAN KONTEN
+   ====================================== */
+.konten-utama {
+    padding-top: 64px;
+    padding-bottom: 16px;
+}
+
+.bagian {
+    margin-bottom: 62px;
+    scroll-margin-top: 25px;
+}
+
+.judul-bagian {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 26px;
+}
+
+.nomor-bagian {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid #cfdbc7;
+    border-radius: 50%;
+    background: var(--sage);
+    color: var(--hijau);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.judul-bagian p {
+    margin-bottom: 5px;
+    color: var(--teks-sekunder);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.judul-bagian h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.7px;
+}
+
+/* Kartu utama */
+.kartu {
+    min-width: 0;
+    padding: 32px;
+    border: 1px solid var(--garis);
+    border-radius: 18px;
+    background: var(--putih);
+    box-shadow: var(--bayangan);
+}
+
+.kartu h3 {
+    margin-bottom: 17px;
+    font-size: 21px;
+    font-weight: 700;
+    letter-spacing: -0.4px;
+}
+
+.kartu p {
+    color: var(--teks-sekunder);
+}
+
+/* Kartu tujuan karier */
+.kartu-tujuan {
+    position: relative;
+    background:
+        radial-gradient(circle at 100% 0%,
+            #3c604c,
+            transparent 65%),
+        var(--hijau-gelap);
+    border-color: var(--hijau-gelap);
+}
+
+.label-kecil {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #79947c;
+    border-radius: 6px;
+    color: #e0e8ce;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.kartu-tujuan h3 {
+    margin-top: 23px;
+    color: white;
+    font-size: 29px;
+}
+
+.kartu-tujuan p {
+    color: #e1e9df;
+    font-size: 14px;
+}
+
+.kartu-tujuan hr {
+    margin-block: 24px;
+    border-color: #c4d1be;
+}
+
+/* ======================================
+   5. RIWAYAT PENDIDIKAN
+   ====================================== */
+.kartu-pendidikan {
+    position: relative;
+    padding-top: 34px;
+    border-top: 3px solid #8aab83;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.kartu-pendidikan:hover {
+    border-top-color: var(--hijau);
+    box-shadow: 0 14px 32px rgb(32 62 53 / 9%);
+}
+
+.tahun {
+    display: inline-block;
+    margin-bottom: 23px;
+    padding: 5px 11px;
+    border-radius: 6px;
+    background: var(--krem);
+    color: #655a3c;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.kartu-pendidikan h3 {
+    font-size: 21px;
+}
+
+.tautan {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* ======================================
+   6. KEAHLIAN DAN HOBI
+   ====================================== */
+.grid-keahlian {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.grid-keahlian .kartu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.grid-keahlian .kartu p {
+    flex-grow: 1;
+    font-size: 14px;
+}
+
+.ikon-teks {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 25px;
+    border: 1px solid #d6e0cf;
+    border-radius: 14px;
+    background: var(--sage);
+    color: var(--hijau);
+    font-family: monospace;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.daftar-tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #dce5d5;
+    border-radius: 6px;
+    background: #f0f5eb;
+    color: #47603e;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.daftar-hobi {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--teks-sekunder);
+}
+
+.daftar-hobi li {
+    padding-left: 5px;
+    margin-bottom: 10px;
+}
+
+.daftar-hobi li:last-child {
+    margin-bottom: 0;
+}
+
+.daftar-hobi li::marker {
+    color: var(--hijau);
+}
+
+/* ======================================
+   7. PROYEK AKADEMIK
+   ====================================== */
+.kartu-proyek {
+    padding: 34px;
+}
+
+.visual-proyek {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 190px;
+    padding: 18px;
+    border: 1px solid #d0ddc5;
+    border-radius: 14px;
+    background:
+        linear-gradient(135deg,
+            #e7eedf,
+            #f4eddb);
+    color: var(--hijau);
+    font-family: monospace;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.visual-proyek span {
+    margin-top: 15px;
+    color: #506447;
+    font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-align: center;
+}
+
+.catatan-kampus {
+    padding: 20px 24px;
+    border: 1px solid #e1dccb;
+    border-left: 3px solid #b5a56f;
+    border-radius: 10px;
+    background: #f3efe3;
+    color: #625b46;
+    font-size: 13px;
+}
+
+/* ======================================
+   8. FORM KONTAK
+   ====================================== */
+.catatan-form {
+    margin-bottom: 25px;
+    padding: 14px 18px;
+    border: 1px solid #dde6d6;
+    border-radius: 9px;
+    background: #f1f5ec;
+    color: #516046;
+    font-size: 12px;
+}
+
+.form-label,
+.label-pilihan {
+    margin-bottom: 8px;
+    color: var(--teks);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.label-pilihan {
+    float: none;
+    width: auto;
+}
+
+.form-control,
+.form-select {
+    min-width: 0;
+    padding: 12px 14px;
+    border: 1px solid #cbd6c7;
+    border-radius: 9px;
+    background-color: #fcfdfa;
+    color: var(--teks);
+    font-size: 14px;
+}
+
+.form-control::placeholder {
+    color: #737f70;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #6e9366;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgb(110 147 102 / 14%);
+}
+
+.form-check {
+    min-height: 32px;
+}
+
+.form-check-label {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    border-color: var(--hijau);
+    background-color: var(--hijau);
+}
+
+.form-check-input:focus {
+    border-color: #6e9366;
+    box-shadow: 0 0 0 3px rgb(110 147 102 / 14%);
+}
+
+textarea.form-control {
+    min-height: 145px;
+    resize: vertical;
+}
+
+.aksi-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+/* ======================================
+   9. TOMBOL
+   ====================================== */
+.btn {
+    padding: 12px 22px;
+    border-radius: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    transition:
+        background-color 0.2s,
+        color 0.2s,
+        border-color 0.2s;
+}
+
+.tombol-utama {
+    border: 1px solid var(--hijau);
+    background: var(--hijau);
+    color: white;
+}
+
+.tombol-utama:hover {
+    border-color: var(--hijau-gelap);
+    background: var(--hijau-gelap);
+    color: white;
+}
+
+.tombol-outline {
+    border: 1px solid #a7b99d;
+    background: transparent;
+    color: var(--hijau-gelap);
+}
+
+.tombol-outline:hover {
+    border-color: var(--hijau);
+    background: #e1ead9;
+    color: var(--hijau-gelap);
+}
+
+.tombol-reset {
+    border: 1px solid #d5dfcf;
+    background: #eff3e9;
+    color: var(--teks);
+}
+
+.tombol-reset:hover {
+    border-color: #b9c9af;
+    background: #e1ead8;
+    color: var(--teks);
+}
+
+.tombol-utama:disabled {
+    border-color: #5d7160;
+    background: #5d7160;
+    color: white;
+    opacity: 1;
+}
+
+/* ======================================
+   10. FOOTER
+   ====================================== */
+.footer {
+    padding: 35px 0;
+    border-top: 4px solid #a8bd93;
+    background: var(--hijau-gelap);
+    color: #e3ecdf;
+}
+
+.footer-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.footer .fw-bold {
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.footer .small {
+    font-size: 12px;
+}
+
+/* ======================================
+   11. RESPONSIVE TABLET
+   ====================================== */
+@media (max-width: 991.98px) {
+    .hero {
+        padding: 55px 0 65px;
+    }
+
+    .hero h1 {
+        max-width: 650px;
+    }
+
+    .kartu-foto {
+        width: min(100%, 270px);
+        box-shadow: 10px 12px 0 #dce5d5;
+    }
+
+    .navbar-collapse {
+        padding-top: 16px;
+    }
+
+    .navigasi .navbar-nav {
+        align-items: stretch;
+        gap: 4px;
+    }
+
+    .navigasi .nav-link {
+        padding: 10px 12px;
+    }
+
+    .grid-keahlian {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ======================================
+   12. RESPONSIVE MOBILE
+   ====================================== */
+@media (max-width: 767.98px) {
+    .navigasi {
+        padding-block: 13px;
+    }
+
+    .hero {
+        padding: 38px 0 50px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+        letter-spacing: -1.2px;
+    }
+
+    .label-hero {
+        margin-bottom: 20px;
+        font-size: 9px;
+        letter-spacing: 1.5px;
+    }
+
+    .deskripsi-hero {
+        font-size: 15px;
+    }
+
+    .konten-utama {
+        padding-top: 38px;
+    }
+
+    .bagian {
+        margin-bottom: 38px;
+    }
+
+    .judul-bagian {
+        gap: 12px;
+        margin-bottom: 20px;
+    }
+
+    .judul-bagian h2 {
+        font-size: 24px;
+    }
+
+    .judul-bagian p {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .nomor-bagian {
+        width: 42px;
+        height: 42px;
+        font-size: 12px;
+    }
+
+    .kartu,
+    .kartu-proyek {
+        padding: 24px;
+        border-radius: 14px;
+    }
+
+    .kartu h3 {
+        font-size: 20px;
+    }
+
+    .kartu-tujuan h3 {
+        font-size: 27px;
+    }
+
+    .grid-keahlian {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .visual-proyek {
+        min-height: 160px;
+    }
+
+    .footer-layout {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+/* HP berukuran kecil */
+@media (max-width: 375px) {
+    .hero h1 {
+        font-size: 31px;
+    }
+
+    .identitas-hero span {
+        font-size: 10px;
+    }
+
+    .judul-bagian h2 {
+        font-size: 21px;
+    }
+
+    .kartu,
+    .kartu-proyek {
+        padding: 20px;
+    }
+
+    .aksi-form {
+        flex-direction: column;
+    }
+
+    .aksi-form .btn {
+        width: 100%;
+    }
+}
+
+/* Mengikuti preferensi pengurangan gerakan */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .btn,
+    .kartu-pendidikan,
+    .navigasi .nav-link {
+        transition: none;
+    }
+}
